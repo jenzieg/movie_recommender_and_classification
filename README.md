@@ -3,19 +3,20 @@
 ## Jen Zieger ##
 ___
 
-#### Tables of Contents:
+## Tables of Contents:
 1. [Overiew and Problem Statement](#Overview-and-Problem-Statement)
 2. [Data Collection and Cleaning](#Data-Collection-and-Cleaning)
 3. [Exploratory Data Analysis](#Exploratory-Data-Analysis)
-4. [Classification Pre-processing and Modeling](#Classification-Pre-processing-and-Modeling)
+4. [Classification Pre-processing and Modeling](#Classification-Preprocessing-and-Modeling)
 5. [Classification Modeling Evaluation](#Classification-Modeling-Evaluation)
-6. [Recommender System Pre-processing and Modeling](#Recommender-System-Pre-processing-and-Modeling)
+6. [Recommender System Pre-processing and Modeling](#Recommender-System-Preprocessing-and-Modeling)
 7. [Recommender System Evaluation](#Recommender-System-Evaluation)
 8. [Flask Development](#Flask-Development)
 9. [Conclusion and Recommendations](#Conclusions-and-Recommendations)
 10. [Modeling Resources](#Modeling-Resources)
 
-### Overview and Problem Statement
+<a name="Overview-and-Problem-Statement"></a>
+## Overview and Problem Statement
 
 #### Scenario
 Have you ever found yourself searching through your tv network and streaming platforms looking for something to watch, only to realize you’ve wasted half of your time looking for a movie? If you are part of the 78% of consumers in the U.S. who use a subscription video-on-demand service [[1]](https://www.statista.com/statistics/318778/subscription-based-video-streaming-services-usage-usa/#:~:text=According%20to%20the%20most%20recent,25%20percent%20in%20five%20years.), the answer is probably yes.
@@ -48,7 +49,8 @@ My strategy for this project included the following steps:
 7. Website Development
 8. Conclusions and Recommendations
 
-### Data Collection and Cleaning
+<a name="Data-Collection-and-Cleaning"></a>
+## Data Collection and Cleaning
 
 For my project, I combined two movie and critic datasets from Kaggle. One being from Rotten Tomatoes and the other from IMDb. The Rotten Tomatoes dataset was my primary dataset for this project, while the IMDb dataset added additional rating and description information.  
 
@@ -122,7 +124,8 @@ After combining and cleaning the data, the primary dataset had 6,587 movie title
 
 Data Collection and Cleaning can be found in 01_Data_Collection_Cleaning.ipynb
 
-### Exploratory Data Analysis
+<a name="Exploratory-Data-Analysis"></a>
+## Exploratory Data Analysis
 
 During the EDA process, I analyzed the following areas:
 - Correlations
@@ -150,7 +153,8 @@ Here you can see the countries with the most titles are in the dark blue, and th
 
 Exploratory Data Analysis can be found in 02_EDA.ipynb
 
-### Classification Pre-Processing and Modeling
+<a name="Classification-Preprocessing-and-Modeling"></a>
+## Classification Pre-Processing and Modeling
 
 Due to memory restrictions, I subset the data by grouping movies by 1 (removing any movie rows that had more than 1 count).
 
@@ -167,7 +171,8 @@ I ran these models with GridSearch using both the original features and polynomi
 Pre-processing can be found in 03_Classification_Pre_Process.ipynb
 Modeling can be found in 04.1_Classification_Modeling.ipynb, 04.2_Classification_Modeling_Poly.ipynb, and 04.3_Classification_Modeling_NN.ipynb
 
-### Classification Modeling Evaluation
+<a name="Classification-Modeling-Evaluation"></a>
+## Classification Modeling Evaluation
 
 In this scenario, having false positives (predicting Rotten, when actually Fresh) and having false negatives (predicting Fresh, when actually Rotten) were held at the same level of failure. Hence, I evaluated these models' success based on their accuracy score.
 
@@ -196,7 +201,8 @@ When evaluating the feature importance of this model, the most important predict
 
 ![features](./images/imp_of_features.png)
 
-### Recommender System Pre-Processing and Modeling
+<a name="Recommender-System-Preprocessing-and-Modeling"></a>
+## Recommender System Pre-Processing and Modeling
 
 Before I started building my recommender systems, I used the following steps to prepare the data:
 - Combined Object Columns
@@ -218,13 +224,15 @@ I ultimately decided to focus on my Content Based Filtering Models. Although it 
 Sparse Matrix Factorization, SVD, and KNN models can be found in 05.1_Recommender_System.ipynb
 Content Based Filtering models with spaCy transformations can be found in 05.2_Recommender_System_spaCy.ipynb
 
-### Recommender System Evaluation
+<a name="Recommender-System-Evaluation"></a>
+## Recommender System Evaluation
 
 My best model wound up being my first model. Using a subset of my dataset with over 13K reviews, I used TF-IDF, modeled and vectorized the dataset, and the user query to find the cosine distances. I then filtered for the top 35 movie titles by cosine similarity score and finally filtered for the top 10 movie recommendations by the score feature.
 
 This model had the lowest cosine similarity scores compared to the other models tested and had the best movie recommended results.
 
-### Flask Development
+<a name="Flask-Development"></a>
+## Flask Development
 
 To put my movie recommender to use, I built a demo website, where users can input a mood, genre, director, actor, really any type of text, and the top movie results will be populated. I used flask and bootstrapping to create this demo website.
 
@@ -234,7 +242,8 @@ Homepage with Form:
 Results Page:
 ![results](./images/movierec_top.png)
 
-### Conclusions and Recommendations
+<a name="Conclusions-and-Recommendations"></a>
+## Conclusions and Recommendations
 
 #### Conclusions
 
@@ -262,10 +271,10 @@ I think the model could benefit from additional ratings and reviews from other d
 
 While the recommender system website was used to demo how the recommender system performs, I believe hiring a web developer would be necessary before deployment. I think it would be helpful to add username and login capabilities, so users can save their search results and mark what movies they’ve already seen. That way, the model can filter those movies out when making recommendations. I would recommend adding a feedback section to get feedback from users on how the website and recommender system can be improved. It would also be essential to use analytic tools to track website traffic and analyze those results.
 
-### Modeling Resources
+<a name="Modeling-Resources"></a>
+## Modeling Resources
 [Content-Based TF-IDF, CVEC, & spaCy Recommender Systems](https://towardsdatascience.com/build-a-text-recommendation-system-with-python-e8b95d9f251c)
 <br>
 [SVD Recommender System](https://www.kaggle.com/cast42/simple-svd-movie-recommender)
 <br>
 [KNN Recommender System](https://towardsdatascience.com/how-did-we-build-book-recommender-systems-in-an-hour-part-2-k-nearest-neighbors-and-matrix-c04b3c2ef55c)
-# movie_project
