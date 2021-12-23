@@ -237,10 +237,10 @@ This model had the lowest cosine similarity scores compared to the other models 
 To put my movie recommender to use, I built a demo website, where users can input a mood, genre, director, actor, really any type of text, and the top movie results will be populated. I used flask and bootstrapping to create this demo website.
 
 Homepage with Form:
-![homepage](./images/movierec_homepage.png)
+![homepage](./images/movierecs_homepage.png)
 
 Results Page:
-![results](./images/movierec_top.png)
+![results](./images/movierecs_top.png)
 
 <a name="Conclusions-and-Recommendations"></a>
 ## Conclusions and Recommendations
