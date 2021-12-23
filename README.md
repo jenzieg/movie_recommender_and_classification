@@ -248,7 +248,7 @@ Results Page:
 #### Conclusions
 
 **Classification** <br>
-The Gradient boos model had 93% accuracy at predicting a rotten tomatoes audience rating. However, the model was fairly overfit. The polynomial feature score and IMDb score represented over 50% of the model’s predictability.
+The Gradient Boost model had 93% accuracy at predicting a rotten tomatoes audience rating. However, the model was fairly overfit. The polynomial feature score and IMDb score represented over 50% of the model’s predictability.
 
 **Recommender System** <br>
 The best model for this project wound up being the content based filtering model with TF-IDF. It allows users to input a sentence (or more) about what they want to watch and receive recommendations.
