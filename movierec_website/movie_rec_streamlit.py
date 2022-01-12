@@ -27,7 +27,7 @@ st.markdown('\n\n\nPlease use the below form to input what you think you\'d want
           '\n * International'
           '\n * Meryl Streep Comedy')
 
-df = pd.read_csv('./Users/jenz/Desktop/projects/movie_classification_recommender_capstone/movierec_website/assets/df_for_flask.csv')
+df = pd.read_csv('./assets/df_for_flask.csv')
 tokenizer = word_tokenize
 stop_words = stopwords
 stemmer = WordNetLemmatizer()
