@@ -137,4 +137,4 @@ tfidf_matrix = vectorizer.fit_transform(df['text'].values)
 key_word = st.text_input('Input what you\'re in the mood for here:')
 
 if st.button('Search 🔍'):
-	st.dataframe(get_recs(key_word))
+    st.dataframe(get_recs(key_word).style.format(subset = ['score','tomatometer_rating','audience_rating','imdb_score'], formatter = '{:.2F}'), width = 10000, height = 3000)
